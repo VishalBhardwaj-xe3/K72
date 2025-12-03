@@ -12,25 +12,57 @@ const FullScreenNav = () => {
   function gsapAnimation() {
     const tl = gsap.timeline();
 
-    tl.from(".stairing", {
-      delay: 0.5,
-      height: 0,
+    tl.to("#fullScreenNav", {
+      display: "block",
+    });
+
+    tl.to(".stairing", {
+      height: '100%',
       stagger: {
         amount: -0.3,
       },
     });
 
-    tl.from(".link", {
-      opacity: 0,
-      rotateX: 90,
+    tl.to(".link", {
+      opacity: 1,
+      rotateX: 0,
       stagger: {
         amount: 0.3,
       },
     });
-    tl.from(".navlink", {
-      opacity: 0,
+    tl.to(".navlink", {
+      opacity: 1,
     });
   }
+
+  function gsapAnimationReverse() {
+    const tl = gsap.timeline();
+
+    tl.to(".link", {
+      opacity: 0,
+      rotateX: 90,
+      stagger: {
+        amount: 0.1,
+      },
+    });
+
+    tl.to(".stairing", {
+      height: 0,
+      stagger: {
+        amount: 0.2,
+      },
+    });
+
+    
+    tl.to(".navlink", {
+      opacity: 0,
+    });
+
+    tl.to("#fullScreenNav", {
+      display: "none",
+    });
+  }
+
 
   useGSAP(
     function () {
@@ -40,9 +72,8 @@ const FullScreenNav = () => {
         });
         gsapAnimation();
       } else {
-        gsap.to("#fullScreenNav", {
-          display: "none",
-        });
+          
+        gsapAnimationReverse()
       }
     },
     [navOpen]
@@ -143,37 +174,37 @@ const FullScreenNav = () => {
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] text-black">
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR TOUT SAVOIR
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/PJC_SiteK72_Thumbnail_640x290.jpg"
+                  src="public/navbar/blank_copie_2.jpg"
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR TOUT SAVOIR
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/WS---K72.ca---MenuThumbnail.jpg"
+                  src="public/navbar/blank_copie_2.jpg"
                   alt=""
                 />
               </div>
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR TOUT SAVOIR
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/PJC_SiteK72_Thumbnail_640x290.jpg"
+                  src="public/navbar/blank_copie_2.jpg"
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR TOUT SAVOIR
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/WS---K72.ca---MenuThumbnail.jpg"
+                  src="public/navbar/blank_copie_2.jpg"
                   alt=""
                 />
               </div>
@@ -182,12 +213,12 @@ const FullScreenNav = () => {
 
           <div className="link origin-top relative  border-t-2 border-white">
             <h1 className="font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-              Projects
+              contact
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] text-black">
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR ENVOYER UN FAX
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
@@ -195,7 +226,7 @@ const FullScreenNav = () => {
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR ENVOYER UN FAX
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
@@ -205,7 +236,7 @@ const FullScreenNav = () => {
               </div>
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR ENVOYER UN FAX
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
@@ -213,7 +244,7 @@ const FullScreenNav = () => {
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  POUR ENVOYER UN FAX
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
@@ -226,42 +257,42 @@ const FullScreenNav = () => {
 
           <div className="link origin-top relative  border-y-2 border-white">
             <h1 className="font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-              Projects
+              blogue
             </h1>
             <div className="moveLink absolute flex top-0 bg-[#D3FD50] text-black">
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  LIER LES ARTICLES
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/PJC_SiteK72_Thumbnail_640x290.jpg"
+                  src="public/navbar/ier.com-16107673482102220.gif"
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  LIER LES ARTICLES
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/WS---K72.ca---MenuThumbnail.jpg"
+                  src="public/navbar/K72_article_ChatGPT_blogue.jpg"
                   alt=""
                 />
               </div>
               <div className="moveX flex items-center">
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  LIER LES ARTICLES
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/PJC_SiteK72_Thumbnail_640x290.jpg"
+                  src="public/navbar/ier.com-16107673482102220.gif"
                   alt=""
                 />
                 <h2 className="whitespace-nowrap font-[font2] text-[8vw] uppercase leading-[0.8] text-center pt-10">
-                  POUR TOUT VOIR
+                  LIER LES ARTICLES
                 </h2>
                 <img
                   className="h-36 w-96 shrink-0 object-cover rounded-full"
-                  src="public/navbar/WS---K72.ca---MenuThumbnail.jpg"
+                  src="public/navbar/K72_article_ChatGPT_blogue.jpg"
                   alt=""
                 />
               </div>
